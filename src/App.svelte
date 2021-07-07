@@ -20,7 +20,6 @@
   const usedChartTheme = theme === "g100" ? chartTheme.dark : chartTheme.light;
 
   const chartOptions = {
-    width: 600,
     height: 300,
     rightPriceScale: {
       borderVisible: false,
@@ -41,7 +40,7 @@
       <SideNavLink text="Firmware Update" href="#/firmware-update" />
     </SideNavItems>
   </SideNav>
-  <Content style="background: none; padding: 0.5rem">
+  <Content style="background: none; padding: 0.5rem; overflow: hidden">
     <Grid>
       <Row>
         <Column lg={16}>
@@ -51,7 +50,7 @@
     </Grid>
     <Grid>
       <Row>
-        <Column noGutter>
+        <Column lg={6}>
           <Chart {...chartOptions} {...usedChartTheme.chart}>
             <LineSeries {data} {...usedChartTheme.lineSeries} />
             <LineSeries
